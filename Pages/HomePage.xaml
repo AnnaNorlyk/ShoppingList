@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    x:Class="ShoppingList.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Shopping List">
+
+    <ContentPage.Content>
+        <Grid
+            Padding="10"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            RowDefinitions="Auto,*,Auto,Auto"
+            ColumnDefinitions="*">
+            <Button
+                Grid.Row="0"
+                Text="New List"
+                HorizontalOptions="Fill"
+                Command="{Binding MakeNewListCommand}" />
+            <Frame
+                Grid.Row="1"
+                BorderColor="Gray"
+                CornerRadius="5"
+                HasShadow="True"
+                Padding="0"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill">
+
+                <CollectionView
+                    x:Name="ListView"
+                    ItemsSource="{Binding MyListItems}"
+                    ItemSizingStrategy="MeasureAllItems"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+                                ColumnDefinitions="*"
+                                RowDefinitions="Auto,Auto"
+                                Margin="10,5">
+                                <Grid Grid.Row="0" ColumnDefinitions="40,*">
+                                    <CheckBox 
+                                        Grid.Column="0"
+                                        IsChecked="{Binding IsChecked}" />
+                                    <Label 
+                                        Grid.Column="1"
+                                        Text="{Binding Name}"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                                <BoxView
+                                    Grid.Row="1"
+                                    HeightRequest="1"
+                                    Color="LightGray"
+                                    Margin="0,5,0,0" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+            <Grid
+                Grid.Row="2"
+                ColumnDefinitions="*,*"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center">
+
+                <Button
+                    Grid.Column="0"
+                    Text="My Recipes"
+                    HorizontalOptions="Fill"
+                    Command="{Binding MyRecipesCommand}" />
+
+                <Button
+                    Grid.Column="1"
+                    Text="Add Recipes"
+                    HorizontalOptions="Fill"
+                    Command="{Binding AddRecipesCommand}" />
+            </Grid>
+            <Button
+                Grid.Row="3"
+                Text="Add More"
+                HorizontalOptions="Fill"
+                Command="{Binding AddMoreCommand}" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

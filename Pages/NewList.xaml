@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    x:Class="ShoppingList.Pages.NewListPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="New List">
+
+    <ContentPage.Content>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label
+                Text="New List Page"
+                FontSize="20"
+                HorizontalOptions="Center" />
+            <Button
+                Text="Go Home"
+                Command="{Binding GoHomeCommand}" />
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

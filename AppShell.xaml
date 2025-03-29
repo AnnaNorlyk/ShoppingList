@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ShoppingList.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:ShoppingList.Pages"
+    Title="ShoppingList"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate pages:HomePage}"
+        Route="HomePage" />
+
+    <ShellContent
+        Title="My Recipes"
+        ContentTemplate="{DataTemplate pages:MyRecipesPage}"
+        Route="MyRecipesPage" />
+
+
+    <ShellContent
+        Title="Add Recipes"
+        ContentTemplate="{DataTemplate pages:AddRecipesPage}"
+        Route="AddRecipesPage" />
+
+
+    <ShellContent
+        Title="New List"
+        ContentTemplate="{DataTemplate pages:NewListPage}"
+        Route="NewListPage" />
+
+</Shell>
